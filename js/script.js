@@ -1,121 +1,63 @@
 "use strict";
+/* Задание на урок:
 
-// let number = 5;
-// const leftBorderWidth = 1;
-// number = 10;
-// console.log(number);
+1) Создать переменную numberOfFilms и в неё поместить ответ от пользователя на вопрос:
+'Сколько фильмов вы уже посмотрели?'
 
-// const obj = {
-//   a: 50,
+2) Создать объект personalMovieDB и в него поместить такие свойства:
+    - count - сюда передается ответ на первый вопрос
+    - movies - в это свойство поместить пустой объект
+    - actors - тоже поместить пустой объект
+    - genres - сюда поместить пустой массив
+    - privat - в это свойство поместить boolean(логическое) значение false
+
+3) Задайте пользователю по два раза вопросы:
+    - 'Один из последних просмотренных фильмов?'
+    - 'На сколько оцените его?'
+Ответы стоит поместить в отдельные переменные
+Записать ответы в объект movies в формате: 
+    movies: {
+        'logan': '8.1'
+    }
+
+Проверить, чтобы все работало без ошибок в консоли */
+
+// let numberOfFilms = prompt("How many films you watched", "");
+
+// let personalMovieDB = {
+//   count: numberOfFilms,
+//   movies: {},
+//   actors: {},
+//   genres: [],
+//   private: false,
 // };
 
-// obj.a = 10;
+// let lastWatchedMovie = prompt("What is your last watched movie?", "");
+// let scoreOfTheWatchedMovie = prompt("What is rating for this film?", "");
+// let lastWatchedMovieNew = prompt("What is your last watched movie?", "");
+// let scoreOfTheWatchedMovieNew = prompt("What is rating for this film?", "");
 
-// console.log(obj);
-// var name = "Ivan";
-// console.log(name);
+// personalMovieDB.movies[lastWatchedMovie] = scoreOfTheWatchedMovie;
+// personalMovieDB.movies[lastWatchedMovieNew] = scoreOfTheWatchedMovieNew;
+// console.log(personalMovieDB);
 
-// {
-//   var result = 50;
-// }
-// console.log(result);
+//Official decision
+const numberOfFilms = +prompt("How many films you watched", "");
 
-// alert(5);
-// [].push("a");
-// const carBodyWidth = 5000, vehicleBodyLength = 4000;
-// console.log("Width of car: " + vehicleBodyWidth + ", length: " + vehicleBodyLength);
-// ['fsfdsf', 'dfdsf', 'fdfdfdfd'].map(a => )
-// Request
-// data
-// response
-//snake_case
-// UPPER_SNAKE_CASE
-// Kebab-case
-// PascalCase
-// const COLOR_RED = '#F00';
-// let number = 4.6;
-// console.log(-4 / 0);
-// console.log("string" * 9);
-// const person = "5";
-// const bool = false;
-// console.log(something);
-// let und;
-// console.log(und);
+const personalMovieDB = {
+  count: numberOfFilms,
+  movies: {},
+  actors: {},
+  genres: [],
+  private: false,
+};
 
-// const obj = {
-//   name: "John",
-//   age: 25,
-//   isMarried: false,
-// };
-// // console.log(obj.name);
-// console.log(obj["name"]);
+const a = prompt("What is your last watched movie?", ""),
+  b = prompt("What is rating for this film?", ""),
+  c = prompt("What is your last watched movie?", ""),
+  d = prompt("What is rating for this film?", "");
 
-// let arr = ["plum.png", "orange.jpg", 6, "apple.bmp", {}, []];
-// console.log(arr[1]);
-// const arr = ["a", "b", "c"];
+personalMovieDB.movies[a] = b;
+personalMovieDB.movies[c] = d;
 
-// arr[10] = "3456";
-// console.log(arr);
-
-// const arrObj = {
-//   a: "a",
-//   1: "b",
-//   2: "c",
-//   abc: {
-//     df: [{}, {}],
-//     def: {},
-//   },
-// };
-
-// const b = "b";
-
-// // arrObj.b = "123";
-// arrObj["b"] = [];
-
-// console.log(arrObj["b"]);
-// console.log(arrObj.b);
-// // const obj = {a: 1, b: 2};
-// const obj = {
-//   Anna: 500,
-//   Alice: 800,
-// };
-// alert("Hello");
-
-// const result = confirm("Are you here?");
-// console.log(result);
-
-// const answer = +prompt("Are you 18?", "18");
-// console.log(answer + 510);
-
-// const answers = [];
-// (answers[0] = prompt("What is your name", "")),
-//   (answers[1] = prompt("What is your surname", "")),
-//   (answers[2] = prompt("What is your age", ""));
-// console.log(typeof answers);
-// console.log(typeof null);
-
-// const category = "toys";
-
-// console.log(`https://someurl.com/${category}/5`);
-
-// const user = "Ivan";
-// alert(`Hello, ${user}`);
-
-// console.log("arr" + " - object");
-// console.log(4 + +"5");
-
-// let incr = 10,
-//   decr = 10;
-
-// ++incr;
-// --decr;
-// console.log(++incr);
-// console.log(--decr);
-
-// console.log(5 % 2);
-
-// console.log(2 + 2 * 2 !== "6");
-
-// const isChecked = false,
-//   isClose = false;
-// console.log(isChecked || !isClose);
+console.log(personalMovieDB);
