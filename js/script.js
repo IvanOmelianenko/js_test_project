@@ -25,11 +25,11 @@
 // let numberOfFilms = prompt("How many films you watched", "");
 
 // let personalMovieDB = {
-//   count: numberOfFilms,
-//   movies: {},
-//   actors: {},
-//   genres: [],
-//   private: false,
+// 	count: numberOfFilms,
+// 	movies: {},
+// 	actors: {},
+// 	genres: [],
+// 	private: false,
 // };
 
 // let lastWatchedMovie = prompt("What is your last watched movie?", "");
@@ -42,22 +42,73 @@
 // console.log(personalMovieDB);
 
 //Official decision
-const numberOfFilms = +prompt("How many films you watched", "");
+let numberOfFilms;
+
+function start() {
+	numberOfFilms = +prompt("How many films you watched", "");
+
+	while (numberOfFilms == "" || numberOfFilms == null || isNaN(numberOfFilms)) {
+		numberOfFilms = +prompt("How many films you watched", "");
+	}
+}
+
+start();
 
 const personalMovieDB = {
-  count: numberOfFilms,
-  movies: {},
-  actors: {},
-  genres: [],
-  private: false,
+	count: numberOfFilms,
+	movies: {},
+	actors: {},
+	genres: [],
+	private: false
 };
 
-const a = prompt("What is your last watched movie?", ""),
-  b = prompt("What is rating for this film?", ""),
-  c = prompt("What is your last watched movie?", ""),
-  d = prompt("What is rating for this film?", "");
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
 
-console.log(personalMovieDB);
+function rememberMyFilms() {
+	for (let i = 0; i < 2; i++) {
+		const a = prompt("What is your last watched movie?", ""),
+			b = prompt("What is rating for this film?", "");
+    
+		if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+			personalMovieDB.movies[a] = b;
+			console.log("Done");
+		} else {
+			console.log("Error");
+			i--;
+		}
+	}
+}
+
+// rememberMyFilms();
+
+function detectPersonalLevel() {
+	if (personalMovieDB.count < 10) {
+		console.log("Watched too few films");
+	} else if (personalMovieDB.count >= 10 && personalMovieDB < 30) {
+		console.log("You classic viewer");
+	} else if (personalMovieDB.count.count >= 30) {
+		console.log("You movie fan");
+	} else {
+		console.log("Fatal error");
+	}
+}
+
+// detectPersonalLevel();
+
+function showMyDB (hidden) {
+	if (!hidden) {
+		console.log(personalMovieDB);
+	}
+}
+
+showMyDB(personalMovieDB.private);
+
+function writeYourGenres() {
+	for (let i = 1; i <= 3; i++) {
+		personalMovieDB.genres[i - 1] = prompt(`Your favourite genre by number ${i}`);
+	}
+}
+
+writeYourGenres();
+
+
